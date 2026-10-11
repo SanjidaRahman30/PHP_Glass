@@ -1,0 +1,65 @@
+:root {
+  /* Brand Color Tokens */
+  --php-teal: #008080;
+  --php-teal-dark: #005f5f;
+  --php-teal-deep: #004242;
+  --php-teal-light: #0d9488;
+  --php-teal-glow: rgba(13, 148, 136, 0.25);
+  
+  /* Soft Aqua & Light Backgrounds */
+  --bg-white: #ffffff;
+  --bg-surface: #f8fafc;
+  --bg-aqua-subtle: #f0fdfa;
+  --bg-aqua-light: #e6f7f7;
+  --bg-aqua-card: #f2fbfb;
+  --bg-aqua-gradient: linear-gradient(135deg, #f0fdfa 0%, #e6f7f7 50%, #f8fafc 100%);
+  --bg-hero-gradient: radial-gradient(ellipse at 70% 50%, rgba(204, 251, 241, 0.6) 0%, rgba(240, 253, 250, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
+  
+  /* Accent CTA Color Tokens */
+  --amber-primary: #f59e0b;
+  --amber-hover: #d97706;
+  --amber-light: #fef3c7;
+  --amber-glow: rgba(245, 158, 11, 0.35);
+  
+  /* Typography Colors */
+  --text-main: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  --text-on-teal: #ffffff;
+  
+  /* Frosted Glass System */
+  --glass-bg: rgba(255, 255, 255, 0.78);
+  --glass-bg-subtle: rgba(255, 255, 255, 0.62);
+  --glass-bg-strong: rgba(255, 255, 255, 0.92);
+  --glass-border: rgba(255, 255, 255, 0.85);
+  --glass-border-subtle: rgba(13, 148, 136, 0.12);
+  --glass-blur: blur(16px);
+  --glass-blur-lg: blur(24px);
+  
+  /* Shadows & Elevations */
+  --shadow-sm: 0 2px 8px -2px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 10px 25px -5px rgba(13, 148, 136, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 20px 35px -8px rgba(13, 148, 136, 0.12), 0 12px 16px -8px rgba(15, 23, 42, 0.05);
+  --shadow-glass: 0 25px 50px -12px rgba(0, 128, 128, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.8);
+  --shadow-amber: 0 10px 25px -5px rgba(245, 158, 11, 0.3);
+  
+  /* Typography */
+  --font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  
+  /* Layout & Spacing */
+  --container-max: 1280px;
+  --header-height: 80px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+  
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-color: 350ms ease-in-out;
+}

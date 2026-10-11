@@ -1,0 +1,424 @@
+/* ==========================================================================
+   HOMEPAGE SCENE 1: CLEAR GLASS HERO (STICKY SCENE)
+   ========================================================================== */
+.hero-sticky-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: calc(var(--header-height) + 2rem);
+  padding-bottom: 4rem;
+  background: radial-gradient(circle at 75% 45%, rgba(204, 251, 241, 0.7) 0%, rgba(240, 253, 250, 0.4) 40%, rgba(255, 255, 255, 0.95) 80%);
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4rem);
+  width: 100%;
+}
+
+.hero-visual-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 480px;
+}
+
+/* Realistic Glass Slab Container */
+.glass-slab-container {
+  position: relative;
+  width: 100%;
+  max-width: 620px;
+  border-radius: var(--radius-xl);
+  perspective: 1000px;
+  transition: transform var(--transition-smooth);
+}
+
+.glass-slab-card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 30px 60px -15px rgba(0, 128, 128, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.glass-slab-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 15px 25px rgba(13, 148, 136, 0.12));
+}
+
+/* Glass Edge Refraction Accent */
+.glass-slab-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.9) 30%, rgba(204, 251, 241, 0.8) 70%, transparent 100%);
+  z-index: 5;
+}
+
+.hero-glass-pill-tag {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: var(--php-teal-dark);
+}
+
+/* Frosted Info Panel */
+.hero-frosted-panel {
+  padding: clamp(2rem, 4vw, 3rem);
+  position: relative;
+  z-index: 10;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hero-title {
+  margin-bottom: 1.25rem;
+  color: var(--text-main);
+  line-height: 1.15;
+}
+
+.hero-supporting-text {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-fact-chips {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(13, 148, 136, 0.12);
+  flex-wrap: wrap;
+}
+
+.hero-fact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.hero-fact-item i {
+  color: var(--php-teal);
+}
+
+/* ==========================================================================
+   HOMEPAGE SCENE 2: REFLECTIVE GLASS BUILDING (ISOMETRIC SHOWCASE)
+   ========================================================================== */
+.reflective-section {
+  background: linear-gradient(180deg, #ffffff 0%, var(--bg-aqua-subtle) 50%, #ffffff 100%);
+  position: relative;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.building-showcase-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+
+.building-stage {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(13, 148, 136, 0.15);
+  box-shadow: var(--shadow-glass);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.building-stage:hover {
+  transform: translateY(-4px);
+}
+
+.building-canvas-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.building-base-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Dynamic Reflective Glass Tint Overlay (300-400ms transition) */
+.building-glass-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  mix-blend-mode: color;
+  opacity: 0.65;
+  transition: background-color var(--transition-color), opacity var(--transition-color);
+  pointer-events: none;
+}
+
+.building-reflection-sheen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    125deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    transparent 40%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.building-active-badge {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-main);
+  z-index: 10;
+}
+
+.building-active-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transition: background-color var(--transition-color);
+}
+
+.building-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.building-facts-bar {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  background: var(--bg-aqua-card);
+  border: 1px solid rgba(13, 148, 136, 0.15);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+}
+
+.b-fact-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.b-fact-val {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--php-teal-dark);
+}
+
+.b-fact-lbl {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   HOMEPAGE SCENE 3: DECORATIVE GLASS ROOM (LIVING ROOM CUTAWAY)
+   ========================================================================== */
+.decorative-section {
+  background: linear-gradient(180deg, #ffffff 0%, #f4fbfb 50%, #ffffff 100%);
+  position: relative;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.room-showcase-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+
+.room-stage {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(13, 148, 136, 0.15);
+  box-shadow: var(--shadow-glass);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.room-stage:hover {
+  transform: translateY(-4px);
+}
+
+.room-canvas-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.room-base-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Dynamic Decorative Wall Overlay (300-400ms transition) */
+.room-wall-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 52%;
+  height: 75%;
+  mix-blend-mode: multiply;
+  opacity: 0.55;
+  transition: all var(--transition-color);
+  pointer-events: none;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Floor Light Bounce Effect */
+.room-floor-bounce {
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  width: 60%;
+  height: 35%;
+  background: radial-gradient(ellipse at center bottom, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.room-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ==========================================================================
+   HOMEPAGE SCENE 4: APARTMENT CUTAWAY (INTERIOR ELEGANCE)
+   ========================================================================== */
+.apartment-section {
+  background: linear-gradient(180deg, #ffffff 0%, var(--bg-aqua-light) 60%, #ffffff 100%);
+  position: relative;
+}
+
+.apartment-header-box {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 3rem auto;
+}
+
+.apartment-live-sync-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(13, 148, 136, 0.25);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-full);
+  margin-top: 1rem;
+  box-shadow: var(--shadow-sm);
+  font-size: 0.825rem;
+  color: var(--text-secondary);
+}
+
+.apartment-sync-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 700;
+  color: var(--php-teal-dark);
+}
+
+.apartment-sync-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+/* Responsive Scenery Breakpoints */
+@media (max-width: 992px) {
+  .hero-grid,
+  .building-showcase-grid,
+  .room-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .chips-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  
+  .swatches-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .chips-grid {
+    grid-template-columns: repeat(5, 1fr);
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+  
+  .swatches-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .apartment-interactive-stage {
+    overflow-x: auto;
+  }
+}
